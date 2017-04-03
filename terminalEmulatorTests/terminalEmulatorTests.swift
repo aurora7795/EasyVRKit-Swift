@@ -7,7 +7,6 @@
 //
 
 import XCTest
-@testable import terminalEmulator
 
 class terminalEmulatorTests: XCTestCase {
     

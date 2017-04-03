@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11134" systemVersion="15F34" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
+<document type="com.apple.InterfaceBuilder3.Cocoa.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="15G1217" targetRuntime="MacOSX.Cocoa" propertyAccessControl="none" useAutolayout="YES" initialViewController="B8D-0N-5wS">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11134"/>
+        <deployment identifier="macosx"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.CocoaPlugin" version="11762"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
         <!--Application-->
@@ -10,11 +12,11 @@
                 <application id="hnw-xV-0zn" sceneMemberID="viewController">
                     <menu key="mainMenu" title="Main Menu" systemMenu="main" id="AYu-sK-qS6">
                         <items>
-                            <menuItem title="terminalEmulator" id="1Xt-HY-uBw">
+                            <menuItem title="EasyVRKit" id="1Xt-HY-uBw">
                                 <modifierMask key="keyEquivalentModifierMask"/>
-                                <menu key="submenu" title="terminalEmulator" systemMenu="apple" id="uQy-DD-JDr">
+                                <menu key="submenu" title="EasyVRKit" systemMenu="apple" id="uQy-DD-JDr">
                                     <items>
-                                        <menuItem title="About terminalEmulator" id="5kV-Vb-QxS">
+                                        <menuItem title="About EasyVRKit" id="5kV-Vb-QxS">
                                             <modifierMask key="keyEquivalentModifierMask"/>
                                             <connections>
                                                 <action selector="orderFrontStandardAboutPanel:" target="Ady-hI-5gd" id="Exp-CZ-Vem"/>
@@ -28,7 +30,7 @@
                                             <menu key="submenu" title="Services" systemMenu="services" id="hz9-B4-Xy5"/>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="4je-JR-u6R"/>
-                                        <menuItem title="Hide terminalEmulator" keyEquivalent="h" id="Olw-nP-bQN">
+                                        <menuItem title="Hide EasyVRKit" keyEquivalent="h" id="Olw-nP-bQN">
                                             <connections>
                                                 <action selector="hide:" target="Ady-hI-5gd" id="PnN-Uc-m68"/>
                                             </connections>
@@ -46,7 +48,7 @@
                                             </connections>
                                         </menuItem>
                                         <menuItem isSeparatorItem="YES" id="kCx-OE-vgT"/>
-                                        <menuItem title="Quit terminalEmulator" keyEquivalent="q" id="4sb-4s-VLi">
+                                        <menuItem title="Quit EasyVRKit" keyEquivalent="q" id="4sb-4s-VLi">
                                             <connections>
                                                 <action selector="terminate:" target="Ady-hI-5gd" id="Te7-pn-YzF"/>
                                             </connections>
@@ -639,7 +641,7 @@
                                 <modifierMask key="keyEquivalentModifierMask"/>
                                 <menu key="submenu" title="Help" systemMenu="help" id="F2S-fz-NVQ">
                                     <items>
-                                        <menuItem title="terminalEmulator Help" keyEquivalent="?" id="FKE-Sm-Kum">
+                                        <menuItem title="EasyVRKit Help" keyEquivalent="?" id="FKE-Sm-Kum">
                                             <connections>
                                                 <action selector="showHelp:" target="Ady-hI-5gd" id="y7X-2Q-9no"/>
                                             </connections>
@@ -653,7 +655,7 @@
                         <outlet property="delegate" destination="Voe-Tx-rLC" id="PrD-fu-P6m"/>
                     </connections>
                 </application>
-                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModuleProvider="target"/>
+                <customObject id="Voe-Tx-rLC" customClass="AppDelegate" customModule="TerminalEmulator" customModuleProvider="target"/>
                 <customObject id="Ady-hI-5gd" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="75" y="0.0"/>
@@ -679,15 +681,142 @@
         <!--View Controller-->
         <scene sceneID="hIz-AP-VOD">
             <objects>
-                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="XfG-lQ-9wD" customClass="ViewController" customModule="TerminalEmulator" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" wantsLayer="YES" id="m2S-Jp-Qdl">
-                        <rect key="frame" x="0.0" y="0.0" width="480" height="270"/>
+                        <rect key="frame" x="0.0" y="0.0" width="480" height="307"/>
                         <autoresizingMask key="autoresizingMask"/>
+                        <subviews>
+                            <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nxr-QQ-iCz" userLabel="requestTV">
+                                <rect key="frame" x="20" y="153" width="440" height="97"/>
+                                <clipView key="contentView" id="cw5-sQ-2Mh">
+                                    <rect key="frame" x="1" y="1" width="438" height="95"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="tAL-Sf-3X6">
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="95"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="438" height="95"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="YZV-rC-sHj"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="RCB-ff-cB0">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="E0O-rP-0Xd">
+                                    <rect key="frame" x="423" y="1" width="16" height="95"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <scrollView wantsLayer="YES" horizontalLineScroll="10" horizontalPageScroll="10" verticalLineScroll="10" verticalPageScroll="10" hasHorizontalScroller="NO" usesPredominantAxisScrolling="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ubg-AW-KWM" userLabel="responseTV">
+                                <rect key="frame" x="20" y="20" width="440" height="97"/>
+                                <clipView key="contentView" id="Uq5-dN-tyh">
+                                    <rect key="frame" x="1" y="1" width="438" height="95"/>
+                                    <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                    <subviews>
+                                        <textView importsGraphics="NO" usesFontPanel="YES" findStyle="panel" continuousSpellChecking="YES" allowsUndo="YES" usesRuler="YES" allowsNonContiguousLayout="YES" quoteSubstitution="YES" dashSubstitution="YES" spellingCorrection="YES" smartInsertDelete="YES" id="CKC-10-RJH">
+                                            <rect key="frame" x="0.0" y="0.0" width="438" height="95"/>
+                                            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <size key="minSize" width="438" height="95"/>
+                                            <size key="maxSize" width="463" height="10000000"/>
+                                            <color key="insertionPointColor" name="controlTextColor" catalog="System" colorSpace="catalog"/>
+                                        </textView>
+                                    </subviews>
+                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </clipView>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="97" id="Bdp-ny-uoF"/>
+                                </constraints>
+                                <scroller key="horizontalScroller" hidden="YES" verticalHuggingPriority="750" doubleValue="1" horizontal="YES" id="oLz-sh-9lZ">
+                                    <rect key="frame" x="-100" y="-100" width="87" height="18"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                                <scroller key="verticalScroller" verticalHuggingPriority="750" doubleValue="1" horizontal="NO" id="SX7-lu-GOp">
+                                    <rect key="frame" x="423" y="1" width="16" height="95"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </scroller>
+                            </scrollView>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="UDq-8t-1zt" userLabel="Connect Btn">
+                                <rect key="frame" x="140" y="260" width="81" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="69" id="D6f-V3-cRq"/>
+                                    <constraint firstAttribute="height" constant="21" id="Vt1-HV-ujz"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Connect" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="fzw-xQ-irN">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="connectClick:" target="XfG-lQ-9wD" id="onM-iA-Isl"/>
+                                </connections>
+                            </button>
+                            <button verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="oa7-se-9LJ">
+                                <rect key="frame" x="385" y="118" width="81" height="32"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="9B5-RL-kUk"/>
+                                    <constraint firstAttribute="width" constant="69" id="SoL-15-KiC"/>
+                                </constraints>
+                                <buttonCell key="cell" type="push" title="Submit" bezelStyle="rounded" alignment="center" borderStyle="border" imageScaling="proportionallyDown" inset="2" id="VAS-Be-rgB" userLabel="submitBtn">
+                                    <behavior key="behavior" pushIn="YES" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="system"/>
+                                </buttonCell>
+                                <connections>
+                                    <action selector="submitClick:" target="XfG-lQ-9wD" id="yV9-8q-GEd"/>
+                                </connections>
+                            </button>
+                            <popUpButton verticalHuggingPriority="750" translatesAutoresizingMaskIntoConstraints="NO" id="TS3-sr-hQC" userLabel="Serial Port Popup">
+                                <rect key="frame" x="18" y="263" width="123" height="26"/>
+                                <popUpButtonCell key="cell" type="push" title="Item 1" bezelStyle="rounded" alignment="left" lineBreakMode="truncatingTail" state="on" borderStyle="borderAndBezel" imageScaling="proportionallyDown" inset="2" selectedItem="fqn-gy-xpw" id="ajm-iu-CLM">
+                                    <behavior key="behavior" lightByBackground="YES" lightByGray="YES"/>
+                                    <font key="font" metaFont="menu"/>
+                                    <menu key="menu" id="vcn-VV-l82">
+                                        <items>
+                                            <menuItem title="Item 1" state="on" id="fqn-gy-xpw"/>
+                                            <menuItem title="Item 2" id="pfm-Fs-3NR"/>
+                                            <menuItem title="Item 3" id="IHg-EA-yG6"/>
+                                        </items>
+                                    </menu>
+                                </popUpButtonCell>
+                            </popUpButton>
+                        </subviews>
+                        <constraints>
+                            <constraint firstItem="ubg-AW-KWM" firstAttribute="top" secondItem="oa7-se-9LJ" secondAttribute="bottom" constant="8" id="8cc-U5-9gz"/>
+                            <constraint firstAttribute="trailing" secondItem="nxr-QQ-iCz" secondAttribute="trailing" constant="20" id="D4t-VS-37T"/>
+                            <constraint firstItem="nxr-QQ-iCz" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="Ffm-xN-nhV"/>
+                            <constraint firstItem="oa7-se-9LJ" firstAttribute="top" secondItem="nxr-QQ-iCz" secondAttribute="bottom" constant="7" id="HNr-O8-9q7"/>
+                            <constraint firstItem="oa7-se-9LJ" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="391" id="Jzj-bF-coF"/>
+                            <constraint firstItem="oa7-se-9LJ" firstAttribute="top" secondItem="nxr-QQ-iCz" secondAttribute="bottom" constant="7" id="R12-6U-mMg"/>
+                            <constraint firstItem="nxr-QQ-iCz" firstAttribute="top" secondItem="UDq-8t-1zt" secondAttribute="bottom" constant="17" id="ROD-lN-6Yi"/>
+                            <constraint firstItem="TS3-sr-hQC" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="UOz-3g-Mpp"/>
+                            <constraint firstItem="ubg-AW-KWM" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="20" id="ZxU-yk-X5Z"/>
+                            <constraint firstAttribute="trailing" secondItem="ubg-AW-KWM" secondAttribute="trailing" constant="20" id="doI-XD-gBl"/>
+                            <constraint firstItem="ubg-AW-KWM" firstAttribute="top" secondItem="oa7-se-9LJ" secondAttribute="bottom" constant="8" id="gTc-1S-LfB"/>
+                            <constraint firstAttribute="bottom" secondItem="ubg-AW-KWM" secondAttribute="bottom" constant="20" id="gxq-vT-u4a"/>
+                            <constraint firstAttribute="trailing" secondItem="oa7-se-9LJ" secondAttribute="trailing" constant="20" id="jIV-eX-Qaj"/>
+                            <constraint firstItem="UDq-8t-1zt" firstAttribute="leading" secondItem="m2S-Jp-Qdl" secondAttribute="leading" constant="146" id="jzi-Df-7S0"/>
+                            <constraint firstItem="TS3-sr-hQC" firstAttribute="top" secondItem="m2S-Jp-Qdl" secondAttribute="top" constant="20" symbolic="YES" id="rCK-ht-Fm4"/>
+                            <constraint firstItem="UDq-8t-1zt" firstAttribute="leading" secondItem="TS3-sr-hQC" secondAttribute="trailing" constant="8" id="v9b-9B-BPa"/>
+                        </constraints>
                     </view>
+                    <connections>
+                        <outlet property="SubmitBtn" destination="oa7-se-9LJ" id="wre-Xj-9n0"/>
+                        <outlet property="connectBtn" destination="UDq-8t-1zt" id="NCW-eY-zfx"/>
+                        <outlet property="reqTV" destination="tAL-Sf-3X6" id="Pj9-AY-jii"/>
+                        <outlet property="responseTV" destination="CKC-10-RJH" id="yq6-bv-5qC"/>
+                        <outlet property="serialPortPopup" destination="TS3-sr-hQC" id="Yw6-7y-TrV"/>
+                    </connections>
                 </viewController>
                 <customObject id="rPt-NT-nkU" userLabel="First Responder" customClass="NSResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="75" y="655"/>
+            <point key="canvasLocation" x="75" y="673.5"/>
         </scene>
     </scenes>
 </document>
